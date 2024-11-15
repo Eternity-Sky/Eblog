@@ -1,0 +1,233 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    color: #1d1d1f;
+    background-color: #ffffff;
+}
+
+/* 导航栏 */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* 英雄区域 */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #f5f5f7, #ffffff);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #86868b;
+    max-width: 600px;
+}
+
+/* 主要内容区域 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* 特色文章 */
+.featured-post {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+.post-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.category {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #06c;
+    margin-bottom: 1rem;
+}
+
+.post-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.post-content p {
+    color: #86868b;
+    margin-bottom: 2rem;
+}
+
+.read-more {
+    color: #06c;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* 文章网格 */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post {
+    background: #f5f5f7;
+    padding: 2rem;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    letter-spacing: -0.5px;
+}
+
+/* 页脚 */
+footer {
+    background: #f5f5f7;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.footer-section h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.subscribe-form button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #06c;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.subscribe-form button:hover {
+    background: #0055b3;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid #d2d2d7;
+    text-align: center;
+    color: #86868b;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    nav {
+        padding: 1rem;
+    }
+    
+    nav ul {
+        display: none;
+    }
+} 
