@@ -54,6 +54,14 @@
                 <a href="#" class="read-more">了解更多 ></a>
             </article>
         </section>
+
+        <div class="subscription-form">
+            <h3>订阅博客更新</h3>
+            <form id="subscribeForm">
+                <input type="email" id="emailInput" placeholder="输入您的邮箱地址" required>
+                <button type="submit">订阅</button>
+            </form>
+        </div>
     </main>
 
     <footer>
@@ -78,5 +86,31 @@
             <p>&copy; 2024 Blog. 保留所有权利</p>
         </div>
     </footer>
+
+    <script>
+    document.getElementById('subscribeForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+            
+            const data = await response.json();
+            if (data.success) {
+                alert('订阅成功！请查看您的邮箱确认。');
+            } else {
+                alert('订阅失败，请稍后重试。');
+            }
+        } catch (error) {
+            alert('发生错误，请稍后重试。');
+        }
+    });
+    </script>
 </body>
 </html>
