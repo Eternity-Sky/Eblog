@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -25,43 +25,46 @@
     </div>
 
     <main>
-        <section class="featured">
-            <article class="featured-post">
-                <div class="post-image">
-                    <img src="featured.jpg" alt="特色文章">
-                </div>
-                <div class="post-content">
-                    <span class="category">技术</span>
-                    <h2>探索下一代 Web 技术</h2>
-                    <p>深入解析前端开发的未来趋势，探讨新技术带来的可能性...</p>
-                    <a href="#" class="read-more">阅读全文 ></a>
-                </div>
-            </article>
+        <section id="articles" class="articles-section">
+            <h2>文章列表</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="featured.jpg" alt="文章图片">
+                    </div>
+                    <div class="article-content">
+                        <span class="category">技术</span>
+                        <h3>探索下一代 Web 技术</h3>
+                        <p>深入解析前端开发的未来趋势，探讨新技术带来的可能性...</p>
+                        <a href="#" class="read-more">阅读全文 ></a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="design.jpg" alt="文章图片">
+                    </div>
+                    <div class="article-content">
+                        <span class="category">设计</span>
+                        <h3>极简主义设计原则</h3>
+                        <p>如何运用极简主义原则创造优雅的用户界面...</p>
+                        <a href="#" class="read-more">了解更多 ></a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="lifestyle.jpg" alt="文章图片">
+                    </div>
+                    <div class="article-content">
+                        <span class="category">生活</span>
+                        <h3>数字极简主义</h3>
+                        <p>在信息过载的时代，如何保持专注和效率...</p>
+                        <a href="#" class="read-more">了解更多 ></a>
+                    </div>
+                </article>
+            </div>
         </section>
-
-        <section class="posts-grid">
-            <article class="post">
-                <span class="category">设计</span>
-                <h3>极简主义设计原则</h3>
-                <p>如何运用极简主义原则创造优雅的用户界面...</p>
-                <a href="#" class="read-more">了解更多 ></a>
-            </article>
-
-            <article class="post">
-                <span class="category">生活</span>
-                <h3>数字极简主义</h3>
-                <p>在信息过载的时代，如何保持专注和效率...</p>
-                <a href="#" class="read-more">了解更多 ></a>
-            </article>
-        </section>
-
-        <div class="subscription-form">
-            <h3>订阅博客更新</h3>
-            <form id="subscribeForm">
-                <input type="email" id="emailInput" placeholder="输入您的邮箱地址" required>
-                <button type="submit">订阅</button>
-            </form>
-        </div>
     </main>
 
     <footer>
@@ -74,43 +77,10 @@
                 <h4>联系</h4>
                 <p>tengyumo666@hotmail.com</p>
             </div>
-            <div class="footer-section">
-                <h4>订阅</h4>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="输入邮箱地址">
-                    <button type="submit">订阅 ></button>
-                </form>
-            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 Blog. 保留所有权利</p>
         </div>
     </footer>
-
-    <script>
-    document.getElementById('subscribeForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('emailInput').value;
-        
-        try {
-            const response = await fetch('/api/subscribe', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email })
-            });
-            
-            const data = await response.json();
-            if (data.success) {
-                alert('订阅成功！请查看您的邮箱确认。');
-            } else {
-                alert('订阅失败，请稍后重试。');
-            }
-        } catch (error) {
-            alert('发生错误，请稍后重试。');
-        }
-    });
-    </script>
 </body>
 </html>
