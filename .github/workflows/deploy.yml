@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Generate HTML from Markdown
 
 on:
   push:
     branches:
-      - main  # 或者你的默认分支
+      - main  # 监听 main 分支的推送
 
 jobs:
   build:
@@ -13,23 +13,20 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
     - name: Install Pandoc
       run: sudo apt-get install -y pandoc
 
     - name: Convert Markdown to HTML
       run: |
-        mkdir -p posts
+        mkdir -p public/posts
         for file in _posts/*.md; do
-          pandoc "$file" -o "posts/$(basename "${file%.*}").html"
+          pandoc "$file" -o "public/posts/$(basename "${file%.*}").html"
         done
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        publish_dir: ./  # 部署整个项目目录
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add public/posts
+        git commit -m "Generate HTML from Markdown"
+        git push origin main
