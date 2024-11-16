@@ -18,13 +18,15 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install markdown-cli
+      run: npm install -g markdown-cli
 
     - name: Build site
       run: |
-        npx markdown-to-html _posts/*.md -o posts/
-        # 这里使用 markdown-to-html 工具将 Markdown 转换为 HTML
+        mkdir -p posts
+        for file in _posts/*.md; do
+          markdown $file > posts/$(basename "${file%.*}").html
+        done
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
