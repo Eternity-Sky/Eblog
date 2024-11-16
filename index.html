@@ -3,84 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客</title>
+    <title>灵感之笔 - 诗歌分享平台</title>
+    <meta name="description" content="灵感之笔 - 一个优雅的诗歌分享平台，由Eternity-Sky倾情打造">
+    <meta name="author" content="Eternity-Sky">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Blog.</div>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#articles">文章</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#about">关于</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-top">
+                <h1 class="site-title">灵感之笔</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="/categories"><i class="fas fa-th-list"></i> 分类</a></li>
+                    <li><a href="/tags"><i class="fas fa-tags"></i> 标签</a></li>
+                    <li><a href="/authors"><i class="fas fa-users"></i> 作者</a></li>
+                    <li><a href="/about"><i class="fas fa-info-circle"></i> 关于</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="hero">
-        <h1>探索创意的边界</h1>
-        <p>记录技术与生活的点滴</p>
-    </div>
+    <main class="site-main">
+        <div class="container">
+            <section class="hero-section">
+                <h2>遇见诗和远方</h2>
+                <p class="subtitle">在这里，与诗歌相遇，与灵感相知</p>
+            </section>
 
-    <main>
-        <section id="articles" class="articles-section">
-            <h2>文章列表</h2>
-            <div class="articles-grid">
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="featured.jpg" alt="文章图片">
-                    </div>
-                    <div class="article-content">
-                        <span class="category">技术</span>
-                        <h3>探索下一代 Web 技术</h3>
-                        <p>深入解析前端开发的未来趋势，探讨新技术带来的可能性...</p>
-                        <a href="public/posts/2024-01-01-my-first-post.html" class="read-more">阅读全文 ></a>
-                    </div>
-                </article>
+            <section class="featured-poems">
+                <h2>精选诗作</h2>
+                <div class="poems-grid">
+                    <!-- 诗歌卡片将通过 JavaScript 动态加载 -->
+                </div>
+            </section>
 
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="design.jpg" alt="文章图片">
-                    </div>
-                    <div class="article-content">
-                        <span class="category">设计</span>
-                        <h3>极简主义设计原则</h3>
-                        <p>如何运用极简主义原则创造优雅的用户界面...</p>
-                        <a href="#" class="read-more">了解更多 ></a>
-                    </div>
-                </article>
+            <section class="categories">
+                <h2>诗歌分类</h2>
+                <div class="category-tags">
+                    <a href="#" class="tag"><i class="fas fa-feather"></i> 现代诗</a>
+                    <a href="#" class="tag"><i class="fas fa-scroll"></i> 古典诗</a>
+                    <a href="#" class="tag"><i class="fas fa-heart"></i> 情感</a>
+                    <a href="#" class="tag"><i class="fas fa-tree"></i> 自然</a>
+                    <a href="#" class="tag"><i class="fas fa-coffee"></i> 生活</a>
+                    <a href="#" class="tag"><i class="fas fa-star"></i> 抒情</a>
+                    <a href="#" class="tag"><i class="fas fa-moon"></i> 夜思</a>
+                </div>
+            </section>
 
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="lifestyle.jpg" alt="文章图片">
+            <section class="about-author">
+                <h2>关于作者</h2>
+                <div class="author-card">
+                    <img src="images/author-avatar.jpg" alt="Eternity-Sky" class="author-avatar">
+                    <div class="author-info">
+                        <h3>Eternity-Sky</h3>
+                        <p class="author-bio">热爱诗歌创作的代码诗人，致力于用技术传播诗歌之美。</p>
+                        <div class="social-links">
+                            <a href="#" title="微信公众号"><i class="fab fa-weixin"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
-                    <div class="article-content">
-                        <span class="category">生活</span>
-                        <h3>数字极简主义</h3>
-                        <p>在信息过载的时代，如何保持专注和效率...</p>
-                        <a href="#" class="read-more">了解更多 ></a>
-                    </div>
-                </article>
-            </div>
-        </section>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>关于</h4>
-                <p>分享技术与生活的个人空间</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于灵感之笔</h3>
+                    <p>一个致力于传播诗歌艺术之美的平台</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="/privacy">隐私政策</a></li>
+                        <li><a href="/terms">使用条款</a></li>
+                        <li><a href="/contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>联系</h4>
-                <p>tengyumo666@hotmail.com</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 灵感之笔 by Eternity-Sky - 让诗歌之美永驻</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Blog. 保留所有权利</p>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html> 

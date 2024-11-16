@@ -1,141 +1,230 @@
+/* 全局样式 */
+:root {
+    --primary-color: #4a4a4a;
+    --accent-color: #8b4513;
+    --bg-color: #f9f6f2;
+    --text-color: #333;
+    --font-main: 'Microsoft YaHei', sans-serif;
+    --font-poetry: 'KaiTi', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f7;
-    color: #1d1d1f;
 }
 
-header {
-    background: #fff;
-    border-bottom: 1px solid #d2d2d7;
-    padding: 20px 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+.site-header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.site-title {
+    color: var(--accent-color);
+    font-family: var(--font-poetry);
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-nav ul {
+.main-nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    gap: 2rem;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 30px;
-}
-
-nav ul li a {
-    color: #1d1d1f;
+.main-nav a {
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.1rem;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #007aff;
+.main-nav a:hover {
+    color: var(--accent-color);
 }
 
-.hero {
-    background: #fff;
-    padding: 80px 20px;
+/* 主要内容区域 */
+.site-main {
+    padding: 3rem 0;
+}
+
+.featured-poems {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-family: var(--font-poetry);
+    color: var(--accent-color);
+    margin-bottom: 2rem;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #1d1d1f;
+.poems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
-.hero p {
-    font-size: 1.2em;
-    color: #6e6e73;
+.poem-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-main {
-    padding: 20px;
+.poem-card:hover {
+    transform: translateY(-5px);
 }
 
-.articles-section {
-    max-width: 1200px;
-    margin: 0 auto;
+.poem-title {
+    font-family: var(--font-poetry);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
-.articles-grid {
+.poem-content {
+    font-family: var(--font-poetry);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* 分类标签 */
+.category-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
     justify-content: center;
 }
 
-.article-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 30%;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.article-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.article-content {
-    padding: 20px;
-}
-
-.category {
-    font-size: 0.9em;
-    color: #007aff;
-    font-weight: 600;
-}
-
-h3 {
-    margin: 15px 0;
-    color: #1d1d1f;
-}
-
-.read-more {
-    color: #007aff;
+.tag {
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--primary-color);
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.read-more:hover {
-    color: #0056b3;
+.tag:hover {
+    background: var(--accent-color);
+    color: white;
 }
 
-footer {
-    background: #fff;
-    border-top: 1px solid #d2d2d7;
-    padding: 40px 0;
+/* 页脚 */
+.site-footer {
+    background: white;
+    padding: 2rem 0;
     text-align: center;
+    margin-top: 4rem;
 }
 
-.footer-content {
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .poems-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 评论模态框样式 */
+.comment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.footer-section {
-    margin-bottom: 20px;
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
 }
 
-.footer-bottom {
-    font-size: 0.9em;
-    color: #6e6e73;
+.modal-content h3 {
+    margin-bottom: 1rem;
+}
+
+.modal-content textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.modal-content button {
+    padding: 0.5rem 1.5rem;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-comment {
+    background: var(--accent-color);
+    color: white;
+}
+
+.close-modal {
+    background: #ddd;
+}
+
+/* 交互按钮样式 */
+.poem-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.interactions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    color: var(--primary-color);
+}
+
+.interactions button:hover {
+    color: var(--accent-color);
 } 
