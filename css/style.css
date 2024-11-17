@@ -227,4 +227,47 @@ h2 {
 
 .interactions button:hover {
     color: var(--accent-color);
+}
+
+/* 作者列表页面样式 */
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.authors-grid .author-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+}
+
+.authors-grid .author-decoration {
+    margin: 0 auto 1.5rem;
+    width: 100px;
+    height: 100px;
+}
+
+.author-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.author-link {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.author-link:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
 } 
